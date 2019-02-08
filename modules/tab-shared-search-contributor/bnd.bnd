@@ -1,0 +1,3 @@
+Bundle-Name: tab-shared-search-contributor
+Bundle-SymbolicName: com.liferay.portal.search.example.tab
+Bundle-Version: 1.0.0
