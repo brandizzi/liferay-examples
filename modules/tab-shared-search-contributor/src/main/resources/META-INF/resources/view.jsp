@@ -1,4 +1,5 @@
-<%@ page import="com.liferay.portal.kernel.util.HttpUtil" %>
+<%@ page import="com.liferay.portal.kernel.util.HttpUtil" %><%@
+page import="com.liferay.portal.kernel.util.PortalUtil" %>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
@@ -7,15 +8,10 @@
 <%
 String tab = renderRequest.getParameter("tab");
 
-String url = HttpUtil.getCompleteURL(request);
+String url = PortalUtil.getCurrentCompleteURL(request);
 
-String div = "?";
-
-if (url.contains("?"))
-	div = "&";
-
-String sportsURL = url+div+"tab=sports";
-String techURL = url + div + "&tab=tech";
+String sportsURL = HttpUtil.setParameter(url, "tab", "sports");
+String techURL = HttpUtil.setParameter(url, "tab", "tech");
 %>
 
 <ul>
